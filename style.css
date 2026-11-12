@@ -616,4 +616,132 @@ footer {
     .hero h1 {
         font-size: 38px;
     }
+
+/* ==================================
+   MORE PAGE - TWO FEATURED PROJECTS
+================================== */
+
+.more-page {
+    max-width: 1050px;
+    margin: 30px auto 40px;
+    display: grid;
+    gap: 22px;
+}
+
+.more-hero {
+    min-height: 240px;
+}
+
+.major-projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.major-card {
+    padding: 0;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.major-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(86, 60, 73, .07);
+}
+
+.major-image {
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    background: var(--pink-light);
+}
+
+.major-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .35s;
+}
+
+.major-card:hover .major-image img {
+    transform: scale(1.04);
+}
+
+.major-image span {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    background: rgba(255, 253, 253, .9);
+    color: var(--pink-dark);
+    padding: 4px 9px;
+    font: 10px "DM Mono", monospace;
+}
+
+.major-info {
+    padding: 23px;
+}
+
+.major-info .eyebrow {
+    margin-bottom: 9px;
+}
+
+.major-info h2 {
+    font: 500 25px "Playfair Display", serif;
+    margin-bottom: 12px;
+}
+
+.major-info h2 em {
+    color: var(--pink-dark);
+}
+
+.major-info > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+    min-height: 85px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding-bottom: 3px;
+    font: 9px "DM Mono", monospace;
+    color: var(--pink-dark);
+    border-bottom: 1px solid var(--pink-medium);
+    transition: .2s;
+}
+
+.project-link:hover {
+    color: var(--text);
+    border-color: var(--pink-dark);
+}
+
+.back-home {
+    justify-self: start;
+    margin-top: 3px;
+}
+
+
+/* MORE PAGE RESPONSIVE */
+
+@media (max-width: 720px) {
+
+    .more-page {
+        margin-top: 18px;
+    }
+
+    .major-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .major-image {
+        height: 230px;
+    }
+
+    .major-info > p:not(.eyebrow) {
+        min-height: auto;
+    }
+}
+
 }
