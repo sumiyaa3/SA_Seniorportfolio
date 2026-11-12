@@ -1,0 +1,619 @@
+
+/* ==================================
+   PERSONAL PORTFOLIO
+   SOFT BABY PINK THEME
+================================== */
+
+:root {
+    --background: #fff5f8;
+    --panel: #fffdfd;
+
+    --pink: #ffe6ef;
+    --pink-light: #fff0f5;
+    --pink-medium: #ffd1e1;
+    --pink-strong: #ffb6d0;
+    --pink-dark: #e98eaf;
+
+    --text: #563c49;
+    --muted: #a77e90;
+    --border: #f6dce6;
+}
+
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-shell {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 4%;
+}
+
+
+/* NAVIGATION */
+
+.topbar {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: var(--pink-dark);
+    font-size: 27px;
+    transition: .2s;
+}
+
+.brand:hover {
+    transform: rotate(25deg);
+}
+
+.brand-mark {
+    line-height: 1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav > a,
+.dropdown-label {
+    font: 10px "DM Mono", monospace;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: .2s;
+}
+
+nav > a:hover,
+.dropdown:hover .dropdown-label,
+.dropdown:focus-within .dropdown-label {
+    color: var(--pink-dark);
+}
+
+.dropdown {
+    position: relative;
+    padding: 28px 0;
+}
+
+.dropdown-label span {
+    color: var(--pink-dark);
+    margin-left: 3px;
+}
+
+.external-arrow {
+    color: var(--pink-dark);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 70px;
+    left: -15px;
+
+    min-width: 165px;
+    padding: 8px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 22px rgba(86, 60, 73, .08);
+
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a {
+    padding: 9px 10px;
+    font: 9px "DM Mono", monospace;
+    color: var(--muted);
+    transition: .2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background: var(--pink-light);
+    color: var(--pink-dark);
+}
+
+.top-note {
+    font: 9px "DM Mono", monospace;
+    color: var(--pink-dark);
+    letter-spacing: .1em;
+}
+
+
+/* MAIN LAYOUT */
+
+.layout {
+    display: grid;
+    grid-template-columns:
+        minmax(175px, .8fr)
+        minmax(400px, 2.1fr)
+        minmax(175px, .8fr);
+    gap: 18px;
+    padding: 25px 0 30px;
+    align-items: start;
+}
+
+.sidebar,
+.main-content {
+    display: grid;
+    gap: 17px;
+    min-width: 0;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 20px;
+    position: relative;
+}
+
+.eyebrow {
+    font: 9px "DM Mono", monospace;
+    letter-spacing: .16em;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+
+/* PROFILE */
+
+.profile {
+    text-align: center;
+}
+
+.profile-image {
+    width: 95px;
+    height: 95px;
+    margin: 0 auto 13px;
+    overflow: hidden;
+    border: 3px solid var(--pink);
+    border-radius: 50%;
+    background: var(--pink-light);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile h2 {
+    font: 21px "Playfair Display", serif;
+}
+
+.profile p {
+    font-size: 11px;
+}
+
+.profile .muted {
+    color: var(--muted);
+}
+
+.profile .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 15px 0;
+}
+
+.profile > p:not(.eyebrow):not(.muted) {
+    color: var(--muted);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 13px;
+    font: 9px "DM Mono", monospace;
+    color: var(--pink-dark);
+    border-bottom: 1px solid var(--pink-medium);
+}
+
+
+/* QUICK FACTS */
+
+.facts {
+    list-style: none;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.facts li {
+    padding: 9px 0;
+    border-top: 1px solid var(--pink-light);
+}
+
+.facts span {
+    color: var(--pink-dark);
+    margin-right: 8px;
+}
+
+
+/* PINK PANELS */
+
+.pink-panel {
+    background: var(--pink-light);
+}
+
+.pink-panel h3 {
+    font: italic 18px "Playfair Display", serif;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.pink-panel p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 255px;
+    padding: 35px 25px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+
+    border: 1px solid var(--pink-medium);
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 182, 208, .35),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 210, 225, .55),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe2ec,
+            #fff7fa
+        );
+}
+
+.hero-subtitle {
+    font: italic 13px "Playfair Display", serif;
+    color: var(--muted);
+    margin: 12px 0 3px;
+}
+
+.hero h1 {
+    font: 500 clamp(38px, 5vw, 62px)
+        "Playfair Display", serif;
+    letter-spacing: -2px;
+}
+
+.hero h1 em {
+    color: var(--pink-dark);
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 10px 0 18px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 12px;
+    font: 8px "DM Mono", monospace;
+    color: var(--muted);
+    letter-spacing: .12em;
+}
+
+
+/* BUTTONS */
+
+.primary-button,
+.contact-button {
+    display: inline-block;
+    background: var(--pink-strong);
+    color: #683f50;
+    padding: 11px 18px;
+    font: 9px "DM Mono", monospace;
+    border: 1px solid #f6a9c3;
+    transition: .2s;
+}
+
+.primary-button:hover,
+.contact-button:hover {
+    background: var(--pink-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ABOUT SECTION */
+
+.about-section {
+    padding: 23px 25px 15px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 5px;
+}
+
+.section-heading h2,
+.contact-panel h2 {
+    font: 500 25px "Playfair Display", serif;
+}
+
+.section-heading h2 em,
+.contact-panel h2 em {
+    color: var(--pink-dark);
+}
+
+.number {
+    color: var(--pink-dark);
+    font: 8px "DM Mono", monospace;
+    white-space: nowrap;
+}
+
+.about-section > p {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.signature {
+    border-top: 1px solid var(--border);
+    margin-top: 15px;
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signature span {
+    font: 8px "DM Mono", monospace;
+    color: var(--muted);
+}
+
+.signature strong {
+    font: italic 19px "Playfair Display", serif;
+    color: var(--pink-dark);
+}
+
+
+/* PERSONAL PHILOSOPHY */
+
+.note-panel {
+    text-align: left;
+}
+
+.note-divider {
+    width: 35px;
+    height: 2px;
+    background: var(--pink-strong);
+    margin: 15px 0;
+}
+
+
+/* RECENT UPDATES */
+
+.update {
+    padding: 10px 0;
+    border-top: 1px solid var(--pink-light);
+}
+
+.update span {
+    font: 9px "DM Mono", monospace;
+    color: var(--pink-dark);
+}
+
+.update p {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+
+/* CONTACT */
+
+.contact-panel h2 {
+    margin-bottom: 9px;
+}
+
+.contact-panel > p:not(.eyebrow) {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.contact-button {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font: 8px "DM Mono", monospace;
+    color: var(--pink-dark);
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    min-height: 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    font: 8px "DM Mono", monospace;
+    color: var(--muted);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+    .layout {
+        grid-template-columns:
+            minmax(155px, .7fr)
+            minmax(360px, 2fr);
+    }
+
+    .layout > aside:last-child {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+    .site-shell {
+        padding: 0 16px;
+    }
+
+    .topbar {
+        padding: 12px 0;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    nav > a,
+    .dropdown-label {
+        font-size: 8px;
+    }
+
+    .dropdown {
+        padding: 12px 0;
+    }
+
+    .dropdown-menu {
+        top: 42px;
+        left: 0;
+        z-index: 20;
+    }
+
+    .top-note {
+        display: none;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        padding-top: 16px;
+    }
+
+    .main-content {
+        grid-row: 1;
+    }
+
+    .layout > aside:first-child {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .layout > aside:first-child .pink-panel {
+        grid-column: 1 / -1;
+    }
+
+    .layout > aside:last-child {
+        grid-column: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .layout > aside:last-child .contact-panel {
+        grid-column: 1 / -1;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 430px) {
+    .layout > aside:first-child,
+    .layout > aside:last-child {
+        grid-template-columns: 1fr;
+    }
+
+    .layout > aside:first-child .pink-panel,
+    .layout > aside:last-child .contact-panel {
+        grid-column: auto;
+    }
+
+    .number {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
